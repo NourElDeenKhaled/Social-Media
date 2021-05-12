@@ -1,0 +1,261 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-grey: #666666;
+  --color-red: #dc4734;
+  --color-dark-red: #a82c1c;
+  --color-bg: #ececec;
+}
+
+body {
+  background-color: var(--color-bg);
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+}
+
+main {
+  margin-top: 2em;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  width: 90%;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 30rem;
+}
+
+.middle-details {
+  order: 1;
+}
+
+.left-details {
+  order: 2;
+}
+
+.right-details {
+  order: 3;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media only screen and (min-width: 940px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 90%;
+  }
+  .left-details {
+    order: 1;
+    width: 22%;
+  }
+  .middle-details {
+    order: 2;
+    width: 50%;
+  }
+
+  .right-details {
+    order: 3;
+    width: 22%;
+  }
+}
+
+.card {
+  background-color: white;
+  flex-direction: column;
+  margin-bottom: 1.5em;
+  box-shadow: 0px 1px 15px 0px rgba(51, 51, 51, 0.2);
+  border-radius: 5px;
+}
+
+.user-details .profile-picture {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  align-self: center;
+  margin-top: -2.5em;
+  margin-bottom: 0.5em;
+}
+
+.user-details p {
+  align-self: center;
+}
+
+.user-details .profile-name {
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
+.user-details .profile-bio {
+  max-width: 75%;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-grey);
+  font-weight: 600;
+  margin-bottom: 2em;
+}
+
+.card {
+  padding: 1.3em;
+}
+
+.card.user-details {
+  padding: 0;
+}
+
+.card .card-title {
+  position: relative;
+  font-weight: 700;
+}
+
+.card .card-title::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 1px;
+  background-color: var(--color-red);
+  top: 2em;
+}
+
+.card-list {
+  list-style: none;
+  flex-direction: column;
+}
+
+.card-list-item {
+  margin-top: 2em;
+}
+
+.post-header {
+  margin-bottom: 1.5em;
+}
+
+.write-post input {
+  width: 100%;
+  margin-left: 1.5em;
+  border: none;
+  border-radius: 50px;
+  background-color: #f1f1f1;
+  box-shadow: inset 0px 1px 10px 0px rgba(85, 85, 85, 0.2);
+  padding: 0 1em;
+}
+
+.write-post input:focus {
+  outline: none;
+}
+
+.share-btn {
+  outline: none;
+  padding: 0.75em 1.5em;
+  border: none;
+  background-color: var(--color-red);
+  align-self: flex-end;
+  color: white;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-radius: 50px;
+  margin-top: 1em;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.share-btn:hover,
+.share-btn:focus {
+  background-color: var(--color-dark-red);
+}
+
+.card-list-item-img,
+.post-header .profile-img,
+.write-post .profile-img {
+  flex-shrink: 0;
+}
+
+.card-list-item-img img,
+.post-header .profile-img img,
+.write-post .profile-img img {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card-list-item-info,
+.profile-details {
+  align-self: center;
+  margin-left: 0.5em;
+}
+
+.card-list-item-info .title,
+.profile-details .name {
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: all 0.2s ease-in;
+}
+
+.card-list-item-info .title:hover,
+.card-list-item-info .subtitle:hover,
+.profile-details .name:hover {
+  color: chocolate;
+  cursor: pointer;
+}
+
+.card-list-item-info .subtitle,
+.profile-details .time {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--color-grey);
+  transition: all 0.2s ease-in;
+}
+
+.post-text {
+  font-weight: 700;
+  margin-bottom: 1.5em;
+}
+
+.post-img {
+  object-fit: cover;
+  margin-bottom: 1.5em;
+}
+
+iframe {
+  max-width: 100%;
+  margin-bottom: 1.5em;
+}
+
+.post-actions {
+  align-items: center;
+}
+
+.comment-and-share {
+  align-items: center;
+  margin-left: auto;
+}
+
+.comment-and-share i {
+  margin: 0 0.5em;
+}
+
+.post-actions i {
+  transition: all 0.2s ease-in;
+}
+
+.post-actions i:hover {
+  color: chocolate;
+  cursor: pointer;
+}
+
+.post-actions span {
+  margin-left: 0.5em;
+}
